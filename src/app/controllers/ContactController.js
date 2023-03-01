@@ -1,4 +1,4 @@
-const ContactsRepository = require('../repositories/ContactcsRepository');
+const ContactsRepository = require('../repositories/ContactsRepository');
 
 class ContactController {
   async index(request, response) {
@@ -60,7 +60,6 @@ class ContactController {
     }
 
     const contactByEmail = await ContactsRepository.findByEmail(email);
-    console.log(contactByEmail);
 
     if (contactByEmail && contactByEmail.id === id) {
       return response.status(400).json({ error: 'This e-mail is already in use' });
