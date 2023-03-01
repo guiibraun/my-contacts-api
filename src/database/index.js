@@ -13,6 +13,7 @@ client.connect();
 /* client.query('SELECT * FROM contacts').then((resolve) => console.log(resolve.rows)); */
 
 exports.query = async (query, values) => {
-  const { rows } = client.query(query, values);
+  const { rows } = await client.query(query, values);
+
   return rows;
 };
