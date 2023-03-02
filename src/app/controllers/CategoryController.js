@@ -34,8 +34,6 @@ class CategoryController {
     const { id } = request.params;
     const { name } = request.body;
 
-    console.log(`Id: ${id} | name: ${name}`);
-
     const categoryExists = await CategoryRepository.findById(id);
 
     if (!categoryExists) {
